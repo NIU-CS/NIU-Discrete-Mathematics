@@ -1,6 +1,6 @@
 module Main (main) where
 
-import Lib
+import ModularArithmetic (computeModularExponentiation)
 import SetOperations (cartesianProduct, powerSetSize, a, b)
 
 main :: IO ()
@@ -13,3 +13,6 @@ main = do
   -- 輸出結果
   putStrLn $ "Size of A x B: " ++ show sizeOfAxB
   putStrLn $ "Size of P(A x B): " ++ show sizeOfPowerSet
+
+  -- 計算 3^21 mod 53
+  computeModularExponentiation

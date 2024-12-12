@@ -25,7 +25,7 @@ source-repository head
 
 library
   exposed-modules:
-      Lib
+      ModularArithmetic
       SetOperations
   other-modules:
       Paths_NIU_Math
