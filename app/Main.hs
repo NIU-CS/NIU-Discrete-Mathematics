@@ -2,6 +2,7 @@ module Main (main) where
 
 import ModularArithmetic (computeModularExponentiation)
 import SetOperations (cartesianProduct, powerSetSize, a, b)
+-- import Counting (c, p, frac, computeCounting)
 
 main :: IO ()
 main = do
@@ -16,3 +17,6 @@ main = do
 
   -- 計算 3^21 mod 53
   computeModularExponentiation
+
+  -- 計算 P(5, 3) 和 C(5, 3)
+  -- computeCounting
