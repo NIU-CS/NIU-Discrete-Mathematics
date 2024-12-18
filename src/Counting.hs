@@ -79,6 +79,9 @@ module Counting
 
         -- Counting Suggested Exercises
         -- 1. Determine the number of (staircase) paths in the x-y-plane from (2, 1) to (7, 4), where each such path is made up of individual steps going one unit to the right (R) or one unit upward (U).
+        putStrLn $ "Determine the number of (staircase) paths in the x-y-plane from (2, 1) to (7, 4), where each such path is made up of individual steps going one unit to the right (R) or one unit upward (U)."
+        putStrLn $ "It needs 5R and 3U, so 8! / (5!3!) = " ++ show (c 8 3)
+
 
         -- let n = 5
         -- let r = 3
