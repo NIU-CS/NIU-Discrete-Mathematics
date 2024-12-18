@@ -58,6 +58,10 @@ module Counting
 
         -- 3. In how many ways can a teacher distribute eight chocolate donuts and seven jelly donuts among three students helpers if each helper wants at least one donut of each kind?
         putStrLn $ "In how many ways can a teacher distribute eight chocolate donuts and seven jelly donuts among three students helpers if each helper wants at least one donut of each kind?"
+        -- Chocolate donuts: ((5 + 3 - 1)! / 5!) = 21
+        -- Jelly donuts: ((4 + 3 - 1)! / 4!) = 15
+        -- By the rule of product, there are 21 * 15 = 315 ways
+        putStrLn $ "((5 + 3 - 1)! / 5!) * ((4 + 3 - 1)! / 4!) = " ++ show (21 * 15)
 
 
         -- let n = 5
