@@ -82,6 +82,15 @@ module Counting
         putStrLn $ "Determine the number of (staircase) paths in the x-y-plane from (2, 1) to (7, 4), where each such path is made up of individual steps going one unit to the right (R) or one unit upward (U)."
         putStrLn $ "It needs 5R and 3U, so 8! / (5!3!) = " ++ show (c 8 3)
 
+        -- 2. How many positive intergers n can we form using the digits 3, 4, 4, 5, 5, 6, 7 if we want n to exceed 5,000,000?
+        -- Case 1: Leading digit 5______ 6! / 2!
+        -- Case 2: Leading digit 6______ 6! / 2!2!
+        -- Case 3: Leading digit 7______ 6! / 2!2!
+        putStrLn $ "How many positive intergers n can we form using the digits 3, 4, 4, 5, 5, 6, 7 if we want n to exceed 5,000,000?"
+        putStrLn $ "Case 1: Leading digit 5______ 6! / 2! = " ++ show (frac 6 `div` frac 2)
+        putStrLn $ "Case 2: Leading digit 6______ 6! / 2!2! = " ++ show (frac 6 `div` (frac 2 * frac 2))
+        putStrLn $ "Case 3: Leading digit 7______ 6! / 2!2! = " ++ show (frac 6 `div` (frac 2 * frac 2))
+        putStrLn $ "Total = " ++ show (frac 6 `div` frac 2 + frac 6 `div` (frac 2 * frac 2) + frac 6 `div` (frac 2 * frac 2))
 
         -- let n = 5
         -- let r = 3
