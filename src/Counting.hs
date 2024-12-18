@@ -92,6 +92,18 @@ module Counting
         putStrLn $ "Case 3: Leading digit 7______ 6! / 2!2! = " ++ show (frac 6 `div` (frac 2 * frac 2))
         putStrLn $ "Total = " ++ show (frac 6 `div` frac 2 + frac 6 `div` (frac 2 * frac 2) + frac 6 `div` (frac 2 * frac 2))
 
+        -- 3. Determine the sum of all the coefficients in the expansions of (x + y + z)^10
+        -- (1 + 1 + 1)^10 = 3^10
+        putStrLn $ "Determine the sum of all the coefficients in the expansions of (x + y + z)^10"
+        putStrLn $ "3^10 = " ++ show (3^10)
+
+
+
+
+
+
+
+
         -- let n = 5
         -- let r = 3
         -- let result1 = p n r
