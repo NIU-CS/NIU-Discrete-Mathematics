@@ -103,8 +103,17 @@ module Counting
         --
         -- implement later
 
+        -- 5. In how many ways can the letters in WONDERING be arranged with exactly two Nconsecutive vowels?
+        -- implement later
 
-
+        -- 6. How many times must we roll a single die in order to get the same score (a) at least twice? (b) at least three time? (c) at least n time, for n >= 4?
+        -- (a) 7
+        -- (b) 11
+        -- (c) 6(n-1)+1
+        putStrLn $ "How many times must we roll a single die in order to get the same score (a) at least twice? (b) at least three time? (c) at least n time, for n >= 4?"
+        putStrLn $ "a) 7"
+        putStrLn $ "b) 11"
+        putStrLn $ "c) 6(n-1)+1"
 
 
 
