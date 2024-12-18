@@ -47,11 +47,18 @@ module Counting
         putStrLn $ "P(" ++ show n ++ ", " ++ show r ++ ") = " ++ show (2 * frac 7)
 
         -- 1. (b) If two of the eight people, say A and B, do not get along well, how many different seatings are possible with A and B not sitting next to each other?
-        let n = 7
-        let r = 7
         putStrLn $ "If two of the eight people, say A and B, do not get along well, how many different seatings are possible with A and B not sitting next to each other?"
         -- 10080 - 4 * 6! = 7200
         putStrLn $ show 10080 ++ " - 4 * 6! = " ++ show (10080 - 4 * frac 6)
+
+        -- 2. Find the coefficient of w^2 x^2 y^2 z^2 in the expansion of (2w - x + 3y + z - 2)^12
+        putStrLn $ "Find the coefficient of w^2 x^2 y^2 z^2 in the expansion of (2w - x + 3y + z - 2)^12"
+        -- 12! / (2! * 2! * 2! * 2! * 4!) * 2^2 * (-1)^2 * 3^2 * 1^2 * (-2)^4 = 718502400
+        putStrLn $ "12! / (2! * 2! * 2! * 2! * 4!) * 2^2 * (-1)^2 * 3^2 * 1^2 * (-2)^4 = " ++ show (frac 12 `div` (frac 2 * frac 2 * frac 2 * frac 2 * frac 4) * 2^2 * (-1)^2 * 3^2 * 1^2 * (-2)^4)
+
+        -- 3. In how many ways can a teacher distribute eight chocolate donuts and seven jelly donuts among three students helpers if each helper wants at least one donut of each kind?
+        putStrLn $ "In how many ways can a teacher distribute eight chocolate donuts and seven jelly donuts among three students helpers if each helper wants at least one donut of each kind?"
+
 
         -- let n = 5
         -- let r = 3
