@@ -3,7 +3,7 @@ module Counting
         c,
         p,
         frac,
-        computeCounting
+        computeCounting,
     ) where
 
     -- 計算排列數
@@ -24,6 +24,19 @@ module Counting
     -- Entry point for demonstration
     computeCounting :: IO ()
     computeCounting = do
+        -- (a) In how many ways can the letters in DATAGRAM be arranged?
+        let n = 8
+        let r = 5
+        putStrLn $ "In how many ways can the letters in DATAGRAM be arranged?"
+        putStrLn $ "P(" ++ show n ++ ", " ++ show r ++ ") = " ++ show (p n r)
+
+        -- (b) For the arrangements of part(a), how many have all three A's together?
+        let n = 6
+        putStrLn $ "For the arrangements of part(a), how many have all three A's together?"
+        putStrLn $ "6! = " ++ show (frac n)
+
+
+
         let n = 5
         let r = 3
         let result1 = p n r
