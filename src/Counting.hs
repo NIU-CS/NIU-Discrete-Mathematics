@@ -63,6 +63,22 @@ module Counting
         -- By the rule of product, there are 21 * 15 = 315 ways
         putStrLn $ "((5 + 3 - 1)! / 5!) * ((4 + 3 - 1)! / 4!) = " ++ show (21 * 15)
 
+        -- 4. Triangle ACE is equilateral with AC = 1. If five points are selected from the interior of the triangle, there are at least two whose distance apart is less than 1/2.
+        putStrLn $ "Triangle ACE is equilateral with AC = 1. If five points are selected from the interior of the triangle, there are at least two whose distance apart is less than 1/2."
+        -- prove by contradiction
+        -- 1. Divide the equilateral triangle into 4 smaller equilateral triangles
+        -- 2. By the pigeonhole principle, at least one of the smaller triangles contains 2 points
+        -- 3. The distance between the 2 points is less than 1/2
+        -- 4. Therefore, there are at least two points whose distance apart is less than 1/2
+        -- 5. The statement is true
+        -- 鴿子 : 5個點
+        -- 鴿洞 : 4個三角形如右圖
+        -- 因為 5>4，基於鴿洞原理，
+        -- 至少有兩個點落於其中一個三角形內，
+        -- 因此至少有兩個點之間距離小於 ½。
+
+        -- Counting Suggested Exercises
+        -- 1. Determine the number of (staircase) paths in the x-y-plane from (2, 1) to (7, 4), where each such path is made up of individual steps going one unit to the right (R) or one unit upward (U).
 
         -- let n = 5
         -- let r = 3
