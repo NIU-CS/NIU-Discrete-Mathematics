@@ -97,7 +97,11 @@ module Counting
         putStrLn $ "Determine the sum of all the coefficients in the expansions of (x + y + z)^10"
         putStrLn $ "3^10 = " ++ show (3^10)
 
-
+        -- 4. In how many ways can we distribute eight identical white balls into four distinct containers so that (a) no container is left empty? (b) the fourth container has an odd number of balls in it?
+        -- (a) ((4 + 4 - 1)! / 4!) = 35
+        -- (b) One marble:
+        --
+        -- implement later
 
 
 
