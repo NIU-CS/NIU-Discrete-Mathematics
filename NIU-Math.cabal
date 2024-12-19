@@ -29,6 +29,7 @@ library
       Logic
       ModularArithmetic
       Number
+      ReflectionAndFunction
       Set
       SetOperations
   other-modules:
