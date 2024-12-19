@@ -84,6 +84,12 @@ This repository implements the exercises in the pdf files provided by the profes
 
 ### Chapter 3: Set Theory
 
+#### Suggested exercises
+
 ### Chapter 4: Number Theory
 
+#### Suggested exercises
+
 ### Chapter 5: Relations and Functions
+
+#### Suggested exercises
