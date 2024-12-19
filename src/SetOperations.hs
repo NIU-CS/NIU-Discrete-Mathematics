@@ -1,8 +1,8 @@
 module SetOperations (
-  cartesianProduct,
-  powerSetSize,
-  a,
-  b
+    cartesianProduct,
+    powerSetSize,
+    a,
+    b,
 ) where
 
 -- 定義集合 A 和 B

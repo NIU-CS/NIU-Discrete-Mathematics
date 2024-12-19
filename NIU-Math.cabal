@@ -26,7 +26,10 @@ source-repository head
 library
   exposed-modules:
       Counting
+      Logic
       ModularArithmetic
+      Number
+      Set
       SetOperations
   other-modules:
       Paths_NIU_Math
