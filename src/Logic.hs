@@ -1,5 +1,5 @@
 module Logic (
-
+    computeLogic,
 ) where
 
 -- 1. Determine whether each of the following sentences is a statement. If a sentence is a statement, determine whether it is true or false. If a sentence is a statement.

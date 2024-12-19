@@ -3,6 +3,7 @@ module Main (main) where
 import ModularArithmetic (computeModularExponentiation)
 import SetOperations (cartesianProduct, powerSetSize, a, b)
 import Counting (c, p, frac, computeCounting)
+import Logic (computeLogic)
 
 main :: IO ()
 main = do
