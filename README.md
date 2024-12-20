@@ -135,8 +135,8 @@ This repository implements the exercises in the pdf files provided by the profes
 ### Chapter 4: Number Theory
 
 - [x] 1
-- [ ] 2
-- [ ] 3
+- [x] 2
+- [x] 3
 - [ ] 4
 - [ ] 5
 

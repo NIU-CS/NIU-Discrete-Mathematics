@@ -27,7 +27,6 @@ library
   exposed-modules:
       Counting
       Logic
-      ModularArithmetic
       Number
       ReflectionAndFunction
       Set

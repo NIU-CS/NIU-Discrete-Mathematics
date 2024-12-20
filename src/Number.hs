@@ -2,6 +2,15 @@ module Number (
     computeNumber,
 ) where
 
+-- Modular Exponentiation: Calculates (base^exp) mod modulus
+modularExponentiation :: Integer -> Integer -> Integer -> Integer
+modularExponentiation base exp modulus
+    | exp == 0 = 1
+    | odd exp = (base * modularExponentiation base (exp - 1) modulus) `mod` modulus
+    | otherwise =
+        let half = modularExponentiation base (exp `div` 2) modulus
+         in (half * half) `mod` modulus
+
 computeNumber :: IO ()
 computeNumber = do
     -- 1. For all a, b, c ∈ Z
@@ -35,5 +44,8 @@ computeNumber = do
     -- 3. Compute 3^21 mod 53
 
     putStrLn "3. Compute 3^21 mod 53"
-    let result = 3 ^ 21 `mod` 53
+    let base = 3
+    let exp = 21
+    let modulus = 53
+    let result = modularExponentiation base exp modulus
     putStrLn $ "3^21 mod 53 = " ++ show result

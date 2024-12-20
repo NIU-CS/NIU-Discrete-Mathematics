@@ -1,9 +1,9 @@
 module Main (main) where
 
-import ModularArithmetic (computeModularExponentiation)
 import SetOperations (cartesianProduct, powerSetSize, a, b)
 import Counting (c, p, frac, computeCounting)
 import Logic (computeLogic)
+import Number (computeNumber)
 
 main :: IO ()
 main = do
@@ -16,9 +16,8 @@ main = do
     putStrLn $ "Size of A x B: " ++ show sizeOfAxB
     putStrLn $ "Size of P(A x B): " ++ show sizeOfPowerSet
 
-
-    computeModularExponentiation
-
     computeCounting
 
     computeLogic
+
+    computeNumber
