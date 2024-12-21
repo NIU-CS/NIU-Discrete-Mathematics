@@ -141,3 +141,40 @@ computeNumber = do
     let results = [8 | n <- possibleNs, let k = (n - 1) `div` 2, let result = 4 * k * (k + 1)]
     putStrLn $ "Possible n: " ++ show possibleNs
     putStrLn $ "Results: " ++ show results
+
+    -- 2. Let a, b, c ∈ Z^+ with gcd(a, b) = 1. If a | c and b | c, prove that ab | c.
+    -- Does the result  hold if gcd(a, b) ≠ 1?
+    --
+    -- Proof:
+    -- gcd(a, b) = 1 => ax + by = 1 for some x, y ∈ Z.
+    -- Then, c = acx + bcy.
+    -- a | c => c = ad, b | c => c = be, for some d, e ∈ Z.
+    -- so c = acx + bcy
+    -- = a(be)x + b(ad)y
+    -- = ab(ex + dy) => ab | c because (ex + dy) ∈ Z.
+    -- The result is false if gcd(a, b) ≠ 1.
+    -- For example, let a = 12, b = 18, c = 36. Then a | c, b | c, but (ab) | c.
+
+    putStrLn "2. Let a, b, c ∈ Z^+ with gcd(a, b) = 1. If a | c and b | c, prove that ab | c."
+    putStrLn "Does the result  hold if gcd(a, b) ≠ 1?"
+    putStrLn ""
+
+    -- Proof with code
+    let a = 12
+    let b = 18
+    let c = 36
+    let x = 1
+    let y = -1
+    let d = 3
+    let e = 2
+    let result = a * b * (e * x + d * y)
+    putStrLn $ "a = " ++ show a ++ ", b = " ++ show b ++ ", c = " ++ show c
+    putStrLn $ "gcd(a, b) = 1 => ax + by = 1 for some x, y ∈ Z."
+    putStrLn $ "Then, c = acx + bcy."
+    putStrLn $ "a | c => c = ad, b | c => c = be, for some d, e ∈ Z."
+    putStrLn $ "so c = acx + bcy"
+    putStrLn $ "= a(be)x + b(ad)y"
+    putStrLn $ "= ab(ex + dy) => ab | c because (ex + dy) ∈ Z."
+    putStrLn $ "The result is false if gcd(a, b) ≠ 1."
+    putStrLn $ "For example, let a = 12, b = 18, c = 36. Then a | c, b | c, but (ab) | c."
+    putStrLn $ "ab | c => " ++ show result ++ " | " ++ show c
