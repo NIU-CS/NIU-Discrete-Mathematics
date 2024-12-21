@@ -23,6 +23,10 @@ frac n = product [1 .. n]
 -- Entry point for demonstration
 computeCounting :: IO ()
 computeCounting = do
+    putStrLn "=============================="
+    putStrLn "Counting"
+    putStrLn "=============================="
+    putStrLn ""
     -- 0. (a) In how many ways can the letters in DATAGRAM be arranged?
     let n = 8
     let r = 5

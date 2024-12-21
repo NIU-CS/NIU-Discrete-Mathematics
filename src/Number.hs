@@ -13,6 +13,10 @@ modularExponentiation base exp modulus
 
 computeNumber :: IO ()
 computeNumber = do
+    putStrLn "=============================="
+    putStrLn "Number Theory"
+    putStrLn "=============================="
+    putStrLn ""
     -- 1. For all a, b, c ∈ Z
     -- a | b => a | bx for all x ∈ Z
     --
