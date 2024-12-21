@@ -119,4 +119,25 @@ computeNumber = do
     putStrLn $ "S^(-1) * S ≡ 1 (mod 101) => " ++ show result ++ " ≡ 1 (mod 101)"
     putStrLn $ "S^(-1) = " ++ show sInverse
 
-    -- 6.
+    -- Number Suggested Exercises
+
+    -- 1. If n ∈ Z^+, and n is odd, prove that 8 | (n^2 - 1).
+
+    putStrLn "1. If n ∈ Z^+, and n is odd, prove that 8 | (n^2 - 1)."
+
+    -- Proof:
+    -- Let n = 2k + 1, k >= 0 & k ∈ Z^+
+    -- n^2 - 1
+    -- = (2k + 1)^2 - 1
+    -- = 4k^2 + 4k
+    -- = 4k(k + 1)
+    --
+    -- Since one of k, k + 1 must be even, say it is 2m for some m ∈ Z^+
+    -- therefore, n^2 - 1 = 4 * 2m = 8m. It follows that 8 | (n^2 - 1).
+
+    -- prove with code
+
+    let possibleNs = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19]
+    let results = [8 | n <- possibleNs, let k = (n - 1) `div` 2, let result = 4 * k * (k + 1)]
+    putStrLn $ "Possible n: " ++ show possibleNs
+    putStrLn $ "Results: " ++ show results
