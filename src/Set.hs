@@ -12,6 +12,11 @@ powerSetSize n = 2 ^ n
 
 computeSet :: IO ()
 computeSet = do
+    putStrLn "=============================="
+    putStrLn "Set"
+    putStrLn "=============================="
+    putStrLn ""
+
     -- 1. Consider the following six subsets of Z.
     --
 

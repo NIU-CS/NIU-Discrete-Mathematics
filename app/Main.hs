@@ -1,9 +1,10 @@
 module Main (main) where
 
-import Set (computeSet)
 import Counting (computeCounting)
 import Logic (computeLogic)
+import Set (computeSet)
 import Number (computeNumber)
+import ReflectionAndFunction (computeReflectionAndFunction)
 
 main :: IO ()
 main = do
@@ -14,3 +15,5 @@ main = do
     computeSet
 
     computeNumber
+
+    computeReflectionAndFunction
