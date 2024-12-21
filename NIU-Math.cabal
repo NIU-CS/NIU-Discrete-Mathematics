@@ -30,7 +30,6 @@ library
       Number
       ReflectionAndFunction
       Set
-      SetOperations
   other-modules:
       Paths_NIU_Math
   autogen-modules:

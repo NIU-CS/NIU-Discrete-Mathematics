@@ -1,7 +1,4 @@
 module Counting (
-    c,
-    p,
-    frac,
     computeCounting,
 ) where
 
@@ -27,6 +24,7 @@ computeCounting = do
     putStrLn "Counting"
     putStrLn "=============================="
     putStrLn ""
+
     -- 0. (a) In how many ways can the letters in DATAGRAM be arranged?
     let n = 8
     let r = 5

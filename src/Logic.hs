@@ -8,6 +8,7 @@ computeLogic = do
     putStrLn "Logic"
     putStrLn "=============================="
     putStrLn ""
+
     -- 1. Determine whether each of the following sentences is a statement. If a sentence is a statement, determine whether it is true or false. If a sentence is a statement.
     -- a) In 2023 George W. Bush was the president of the United States.
     -- b) x + 3 is a positive interger.
