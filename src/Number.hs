@@ -85,4 +85,38 @@ computeNumber = do
     let solutions = [x | x <- [-100..100], (3 * x) `mod` 7 == 4]
     putStrLn $ "Solutions: " ++ show solutions
 
-    -- 5.
+    -- 5. Let S = 42. Finding S^(-1), where S^(-1) * S ≡ 1 (mod 101)
+    -- 101 mod 42 = 17 => 101 - 2 * 42 = 17
+    -- 42 mod 17 = 8 => 42 - 2 * 17 = 8
+    -- 17 mod 8 = 1 => 17 - 2 * 8 = 1
+    --
+    -- 42 - 2 * 17 = 8 => 42 - 2 * (101 - 2 * 42) = 8
+    --                    5 * 42 - 2 * 101 = 8
+    --
+    -- 17 - 2 * 8 = 1 => (101 - 2 * 42) - 2 * (5 * 42 - 2 * 101) = 1
+    --                   5 * 101 - 12 * 42 = 1
+    --
+    -- S^(-1) = -12
+
+    putStrLn "5. Let S = 42. Finding S^(-1), where S^(-1) * S ≡ 1 (mod 101)"
+    putStrLn "101 mod 42 = 17 => 101 - 2 * 42 = 17"
+    putStrLn "42 mod 17 = 8 => 42 - 2 * 17 = 8"
+    putStrLn "17 mod 8 = 1 => 17 - 2 * 8 = 1"
+    putStrLn ""
+    putStrLn "42 - 2 * 17 = 8 => 42 - 2 * (101 - 2 * 42) = 8"
+    putStrLn "                   5 * 42 - 2 * 101 = 8"
+    putStrLn ""
+    putStrLn "17 - 2 * 8 = 1 => (101 - 2 * 42) - 2 * (5 * 42 - 2 * 101) = 1"
+    putStrLn "                   5 * 101 - 12 * 42 = 1"
+    putStrLn ""
+    putStrLn "S^(-1) = -12"
+    putStrLn "S^(-1) * S ≡ 1 (mod 101) => -12 * 42 ≡ 1 (mod 101)"
+
+    -- prove with code
+    let s = 42
+    let sInverse = -12
+    let result = (s * sInverse) `mod` 101
+    putStrLn $ "S^(-1) * S ≡ 1 (mod 101) => " ++ show result ++ " ≡ 1 (mod 101)"
+    putStrLn $ "S^(-1) = " ++ show sInverse
+
+    -- 6.
