@@ -10,6 +10,11 @@ cartesianProduct xs ys = [(x, y) | x <- xs, y <- ys]
 powerSetSize :: Int -> Int
 powerSetSize n = 2 ^ n
 
+-- 1. Consider the following six subsets of Z.
+judgeSubset :: IO ()
+judgeSubset = do
+    putStrLn "1. Consider the following six subsets of Z."
+
 computeSet :: IO ()
 computeSet = do
     putStrLn "=============================="
@@ -17,7 +22,4 @@ computeSet = do
     putStrLn "=============================="
     putStrLn ""
 
-    -- 1. Consider the following six subsets of Z.
-    --
-
-    putStrLn "1. Consider the following six subsets of Z."
+    judgeSubset
