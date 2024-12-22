@@ -11,42 +11,41 @@ modularExponentiation base exp modulus
         let half = modularExponentiation base (exp `div` 2) modulus
          in (half * half) `mod` modulus
 
-computeNumber :: IO ()
-computeNumber = do
-    putStrLn "=============================="
-    putStrLn "Number Theory"
-    putStrLn "=============================="
-    putStrLn ""
+-- 1. For all a, b, c ∈ Z
+proof1 :: IO ()
+proof1 = do
+    putStrLn "1. For all a, b, c ∈ Z"
+    putStrLn "a | b => a | bx for all x ∈ Z"
 
-    -- 1. For all a, b, c ∈ Z
-    -- a | b => a | bx for all x ∈ Z
-    --
     -- Proof:
     -- a | b means b = a * n for some n ∈ Z
     -- Multiply both sides by any x ∈ Z
     -- x * b = a * n * x, where (n * x) is also an integer.
     -- Thus, a | bx
-    putStrLn "1. For all a, b, c ∈ Z"
-    putStrLn "a | b => a | bx for all x ∈ Z"
 
-    -- 2. Prove Theorem 4.5 (a).
-    -- Let a_1, a_2, b_1, b_2, and n be integers with n > 1.
-    -- If a_1 ≡ a_2 (mod n) and b_1 ≡ b_2 (mod n), then
-    -- (a) a_1 + b_1 ≡ a_2 + b_2 (mod n), and
-    --
-    -- Proof: a_1 ≡ a_2 (mod n) and b_1 ≡ b_2 (mod n)
+    let a = 3
+    let b = 6
+    let x = 2
+    let result = a `mod` b == 0 && a `mod` (b * x) == 0
+    putStrLn $ "a = " ++ show a ++ ", b = " ++ show b ++ ", x = " ++ show x
+    putStrLn $ "a | b => a | bx for all x ∈ Z => " ++ show result
+
+-- 2. Prove Theorem 4.5 (a).
+proof2 :: IO ()
+proof2 = do
+    putStrLn "2. Prove Theorem 4.5 (a)."
+    putStrLn "Let a_1, a_2, b_1, b_2, and n be integers with n > 1."
+    putStrLn "If a_1 ≡ a_2 (mod n) and b_1 ≡ b_2 (mod n), then"
+    putStrLn "(a) a_1 + b_1 ≡ a_2 + b_2 (mod n), and"
+
+    -- Proof:
+    -- a_1 ≡ a_2 (mod n) and b_1 ≡ b_2 (mod n)
     -- Mean n | (a_1 - a_2) and n | (b_1 - b_2).
     -- By Theorem 4.1 (e) we have
     --     n | (a_1 - a_2) + (b_1 - b_2)
     --  => n | (a_1 + b_1) - (a_2 + b_2)
     -- Thus, a_1 + b_1 ≡ a_2 + b_2 (mod n)
 
-    putStrLn "2. Prove Theorem 4.5 (a)."
-    putStrLn "Let a_1, a_2, b_1, b_2, and n be integers with n > 1."
-    putStrLn "If a_1 ≡ a_2 (mod n) and b_1 ≡ b_2 (mod n), then"
-    putStrLn "(a) a_1 + b_1 ≡ a_2 + b_2 (mod n), and"
-
-    -- prove with code
     let a1 = 5
     let a2 = 3
     let b1 = 7
@@ -57,8 +56,9 @@ computeNumber = do
     putStrLn $ "a_1 + b_1 ≡ a_2 + b_2 (mod n) => " ++ show result1 ++ " ≡ " ++ show result2 ++ " (mod " ++ show n ++ ")"
     putStrLn $ "a_1 + b_1 ≡ a_2 + b_2 (mod n) => " ++ show (result1 == result2)
 
-    -- 3. Compute 3^21 mod 53
-
+-- 3. Compute 3^21 mod 53
+compute3Power21Mod53 :: IO ()
+compute3Power21Mod53 = do
     putStrLn "3. Compute 3^21 mod 53"
     let base = 3
     let exp = 21
@@ -72,7 +72,9 @@ computeNumber = do
     -- 3^16 (mod 53) = 42^2 (mod 53) = 1764 (mod 53) = 15
     -- => 3^21 (mod 53) = 3^16 * 3^4 * 3 (mod 53) = 15 * 28 * 3 (mod 53) = 1260 (mod 53) = 41
 
-    -- 4. What are the solutions of the linear congruence 3x ≡ 4 (mod 7)?
+-- 4. What are the solutions of the linear congruence 3x ≡ 4 (mod 7)?
+sameMod7 :: IO()
+sameMod7 = do
     -- 5 * 3x ≡ 5 * 4 (mod 7)
     -- 5 * 3 ≡ 15 ≡ 1 (mod 7)
     -- 5 * 4 ≡ 20 ≡ 6 (mod 7)
@@ -90,7 +92,9 @@ computeNumber = do
     let solutions = [x | x <- [-100..100], (3 * x) `mod` 7 == 4]
     putStrLn $ "Solutions: " ++ show solutions
 
-    -- 5. Let S = 42. Finding S^(-1), where S^(-1) * S ≡ 1 (mod 101)
+-- 5. Let S = 42. Finding S^(-1), where S^(-1) * S ≡ 1 (mod 101)
+findSInverse :: IO ()
+findSInverse = do
     -- 101 mod 42 = 17 => 101 - 2 * 42 = 17
     -- 42 mod 17 = 8 => 42 - 2 * 17 = 8
     -- 17 mod 8 = 1 => 17 - 2 * 8 = 1
@@ -124,10 +128,11 @@ computeNumber = do
     putStrLn $ "S^(-1) * S ≡ 1 (mod 101) => " ++ show result ++ " ≡ 1 (mod 101)"
     putStrLn $ "S^(-1) = " ++ show sInverse
 
-    -- Number Suggested Exercises
+-- Number Suggested Exercises
 
-    -- 1. If n ∈ Z^+, and n is odd, prove that 8 | (n^2 - 1).
-
+-- 1. If n ∈ Z^+, and n is odd, prove that 8 | (n^2 - 1).
+prove3:: IO ()
+prove3 = do
     putStrLn "1. If n ∈ Z^+, and n is odd, prove that 8 | (n^2 - 1)."
 
     -- Proof:
@@ -147,7 +152,9 @@ computeNumber = do
     putStrLn $ "Possible n: " ++ show possibleNs
     putStrLn $ "Results: " ++ show results
 
-    -- 2. Let a, b, c ∈ Z^+ with gcd(a, b) = 1. If a | c and b | c, prove that ab | c.
+-- 2. Let a, b, c ∈ Z^+ with gcd(a, b) = 1. If a | c and b | c, prove that ab | c.
+prove4:: IO ()
+prove4 = do
     -- Does the result  hold if gcd(a, b) ≠ 1?
     --
     -- Proof:
@@ -183,3 +190,21 @@ computeNumber = do
     putStrLn $ "The result is false if gcd(a, b) ≠ 1."
     putStrLn $ "For example, let a = 12, b = 18, c = 36. Then a | c, b | c, but (ab) | c."
     putStrLn $ "ab | c => " ++ show result ++ " | " ++ show c
+
+computeNumber :: IO ()
+computeNumber = do
+    putStrLn "=============================="
+    putStrLn "Number Theory"
+    putStrLn "=============================="
+    putStrLn ""
+
+    proof1
+    proof2
+    compute3Power21Mod53
+    sameMod7
+    findSInverse
+
+    -- Number Suggested Exercises
+
+    prove3
+    prove4
