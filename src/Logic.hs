@@ -2,6 +2,19 @@ module Logic (
     computeLogic,
 ) where
 
+{-# LANGUAGE GADTs #-}
+
+data Prop a where
+    And          :: Prop Bool -> Prop Bool -> Prop Bool
+    Nand         :: Prop Bool -> Prop Bool -> Prop Bool
+    Or           :: Prop Bool -> Prop Bool -> Prop Bool
+    Nor          :: Prop Bool -> Prop Bool -> Prop Bool
+    Implies      :: (Bool -> Bool) -> Prop Bool -> Prop Bool
+    Not          :: Prop Bool -> Prop Bool
+    ExclusiveOr  :: Prop Bool -> Prop Bool -> Prop Bool
+    Iff          :: Prop Bool -> Prop Bool -> Prop Bool
+    ExclusiveNor :: Prop Bool -> Prop Bool -> Prop Bool
+
 computeLogic :: IO ()
 computeLogic = do
     putStrLn "=============================="
