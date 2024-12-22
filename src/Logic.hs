@@ -1,8 +1,8 @@
+{-# LANGUAGE GADTs #-}
+
 module Logic (
     computeLogic,
 ) where
-
-{-# LANGUAGE GADTs #-}
 
 data Prop a where
     And          :: Prop Bool -> Prop Bool -> Prop Bool
