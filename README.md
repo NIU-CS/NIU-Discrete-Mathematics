@@ -150,3 +150,7 @@ This repository implements the exercises in the pdf files provided by the profes
 ### Chapter 5: Relations and Functions
 
 #### Suggested exercises
+
+### Chapter 6: Graph Theory
+
+#### Suggested exercises

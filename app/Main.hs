@@ -5,6 +5,7 @@ import Logic (computeLogic)
 import Set (computeSet)
 import Number (computeNumber)
 import ReflectionAndFunction (computeReflectionAndFunction)
+import Graph (computeGraph)
 
 main :: IO ()
 main = do
@@ -17,3 +18,5 @@ main = do
     computeNumber
 
     computeReflectionAndFunction
+
+    computeGraph
