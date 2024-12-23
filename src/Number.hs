@@ -214,6 +214,23 @@ gcdEuclid = do
         gcd a 0 = a
         gcd a b = gcd b (a `mod` b)
 
+-- 4. Morpheus cipher.
+morpheusCipher :: IO ()
+morpheusCipher = do
+    -- The Cipher works as follows:
+    -- Morpheus Cipher:
+    --
+    -- 1) You will need a plaintext, along with two integers a and b.
+    -- 2) Convert your plaintext to numeric vector P.
+    -- 3) Devide P into pairs*. For each pair, (P_1, P_2), create the cipher pair (C_1, C_2) using
+    --   C_1 ≡ a * P_1 + b * P_2 (mod 26)
+    --   C_2 ≡ a * P_2 + b * P_1 (mod 26)
+    -- 4) Recombine the cipher pairs to create the full cipher vector C.
+    -- 5) Once all C entries have been found, convert your vector back to text.
+    --
+    -- implement later
+    putStrLn "4. Morpheus cipher."
+
 computeNumber :: IO ()
 computeNumber = do
     putStrLn "=============================="
@@ -232,3 +249,4 @@ computeNumber = do
     prove3
     prove4
     gcdEuclid
+    morpheusCipher
