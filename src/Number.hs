@@ -191,6 +191,29 @@ prove4 = do
     putStrLn $ "For example, let a = 12, b = 18, c = 36. Then a | c, b | c, but (ab) | c."
     putStrLn $ "ab | c => " ++ show result ++ " | " ++ show c
 
+-- 3. Use Euclid's Algorithm to calculate the Greatest Common Divisor of 140 and 1099.
+gcdEuclid :: IO ()
+gcdEuclid = do
+    putStrLn "3. Use Euclid's Algorithm to calculate the Greatest Common Divisor of 140 and 1099."
+
+    -- Proof:
+    -- 1099 = 140 * 7 + 99
+    -- 140 = 119 * 1 + 41
+    -- 119 = 5 * 21 + 14
+    -- 21 = 1 * 14 + 7
+    -- 14 = 2 * 7 + 0
+    -- gcd(140, 1099) = 7
+
+    let a = 140
+    let b = 1099
+    let result = gcd a b
+    putStrLn $ "gcd(" ++ show a ++ ", " ++ show b ++ ") = " ++ show result
+
+    where
+        gcd :: Int -> Int -> Int
+        gcd a 0 = a
+        gcd a b = gcd b (a `mod` b)
+
 computeNumber :: IO ()
 computeNumber = do
     putStrLn "=============================="
@@ -208,3 +231,4 @@ computeNumber = do
 
     prove3
     prove4
+    gcdEuclid
