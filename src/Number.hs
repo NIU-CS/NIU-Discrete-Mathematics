@@ -230,8 +230,72 @@ morpheusCipher = do
     -- 4) Recombine the cipher pairs to create the full cipher vector C.
     -- 5) Once all C entries have been found, convert your vector back to text.
     --
-    -- implement later
-    putStrLn "4. Morpheus cipher."
+    -- * You and your friend agree to only send even length messages.
+    --
+    -- Example: a = 2, b = 5
+    --
+    -- B -> 1, O -> 14, A -> 0, T -> 19
+    -- Plaintext to number codes vector P
+    -- Pair up
+    -- (1, 14), (0, 19)
+    --
+    -- Pair 1: (P_1, P_2) = (1, 14)
+    -- C_1 = 2 * 1 + 5 * 14 = 20 (mod 26)
+    -- C_2 = 5 * 1 - 2 * 14 = 3 (mod 26)
+    --
+    -- Pair 2: (P_1, P_2) = (0, 19)
+    -- C_1 = 2 * 0 + 5 * 19 = 17 (mod 26)
+    -- C_2 = 5 * 0 - 2 * 19 = 14 (mod 26)
+    --
+    -- Recombine: 20 3 17 4
+    -- (vector C)
+    --
+    -- to word: U D R O
+    -- (to ciphertext)
+    --
+    -- Text & code is provided.
+    --
+    -- A -> 0, B -> 1, C -> 2, D -> 3, E -> 4, F -> 5, G -> 6, H -> 7, I -> 8, J -> 9, K -> 10, L -> 11, M -> 12, N -> 13, O -> 14, P -> 15, Q -> 16, R -> 17, S -> 18, T -> 19, U -> 20, V -> 21, W -> 22, X -> 23, Y -> 24, Z -> 25
+    --
+    -- Assuming you have access to ciphertext, and both parameters a and b, describe how you would go about inverting the Morpheus cipher in order to recover the plaintext.
+    -- From the example, suppose you received ciphertext "UDRO", how do you recover the original plaintext "BOAT"?
+    -- 4. Morpheus cipher.
+    putStrLn "4. Morpheus cipher." -- the answer is not correct (the answer is "BOAT" but now it is "FCYZ")
+    let cipherText = "UDRO"
+    let a = 2
+    let b = 5
+    let plainText = "BOAT"
+    let recoveredPlainText = morpheusCipherInverse cipherText a b
+    putStrLn $ "Ciphertext: " ++ cipherText
+    putStrLn $ "Plaintext: " ++ plainText
+    putStrLn $ "Recovered Plaintext: " ++ recoveredPlainText
+
+    where
+        morpheusCipherInverse :: String -> Int -> Int -> String
+        morpheusCipherInverse cipherText a b = map (\c -> toEnum (c + fromEnum 'A')) plainCodes
+            where
+                cipherCodes = map (\c -> fromEnum c - fromEnum 'A') cipherText
+                cipherPairs = pairs cipherCodes
+                plainPairs = map (invertPair a b) cipherPairs
+                plainCodes = concatMap (\(p1, p2) -> [p1, p2]) plainPairs
+
+                pairs :: [a] -> [(a, a)]
+                pairs [] = []
+                pairs (x:y:xs) = (x, y) : pairs xs
+
+                invertPair :: Int -> Int -> (Int, Int) -> (Int, Int)
+                invertPair a b (c1, c2) = (p1', p2') -- Return the corrected p1' and p2'
+                    where
+                        det = (a * a - b * b) `mod` 26
+                        invDet = modInverse det 26
+                        p1 = (invDet * (a * c1 - b * c2)) `mod` 26
+                        p2 = (invDet * (a * c2 - b * c1)) `mod` 26
+                        -- Ensure positive results after modulo
+                        p1' = if p1 < 0 then p1 + 26 else p1
+                        p2' = if p2 < 0 then p2 + 26 else p2
+
+                modInverse :: Int -> Int -> Int
+                modInverse a m = head [x | x <- [1..m], (a * x) `mod` m == 1]
 
 computeNumber :: IO ()
 computeNumber = do
