@@ -4,6 +4,8 @@ module Logic (
     computeLogic,
 ) where
 
+import Endl (endl)
+
 data Prop a where
     And          :: Prop Bool -> Prop Bool -> Prop Bool
     Nand         :: Prop Bool -> Prop Bool -> Prop Bool
@@ -64,8 +66,11 @@ computeLogic = do
     putStrLn "=============================="
     putStrLn "Logic"
     putStrLn "=============================="
-    putStrLn ""
+    endl
 
     judgeIsStatement
+    endl
     identifyPrimitiveStatements
+    endl
     writeStatementSybolic
+    endl

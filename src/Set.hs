@@ -2,6 +2,8 @@ module Set (
     computeSet,
 ) where
 
+import Endl (endl)
+
 -- 計算笛卡兒積
 cartesianProduct :: [a] -> [b] -> [(a, b)]
 cartesianProduct xs ys = [(x, y) | x <- xs, y <- ys]
@@ -20,6 +22,7 @@ computeSet = do
     putStrLn "=============================="
     putStrLn "Set"
     putStrLn "=============================="
-    putStrLn ""
+    endl
 
     judgeSubset
+    endl

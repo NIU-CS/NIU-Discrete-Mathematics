@@ -2,6 +2,8 @@ module Number (
     computeNumber,
 ) where
 
+import Endl (endl)
+
 -- Modular Exponentiation: Calculates (base^exp) mod modulus
 modularExponentiation :: Integer -> Integer -> Integer -> Integer
 modularExponentiation base exp modulus
@@ -239,14 +241,23 @@ computeNumber = do
     putStrLn ""
 
     proof1
+    endl
     proof2
+    endl
     compute3Power21Mod53
+    endl
     sameMod7
+    endl
     findSInverse
+    endl
 
     -- Number Suggested Exercises
 
     prove3
+    endl
     prove4
+    endl
     gcdEuclid
+    endl
     morpheusCipher
+    endl
