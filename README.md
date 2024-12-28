@@ -149,7 +149,34 @@ This repository implements the exercises in the pdf files provided by the profes
 
 ### Chapter 5: Relations and Functions
 
+- [x] 1
+- [ ] 2
+- [ ] 3
+- [ ] 4
+- [ ] 5 (a)
+- [ ] 5 (b)
+- [ ] 5 (c)
+- [ ] 6 (a)
+- [ ] 6 (b)
+- [ ] 7
+- [ ] 8 (a)
+- [ ] 8 (b)
+- [ ] 8 (c)
+
 #### Suggested exercises
+
+- [ ] 1
+- [ ] 2 (a)
+- [ ] 2 (b)
+- [ ] 2 (c)
+- [ ] 3 (a)
+- [ ] 3 (b)
+- [ ] 4
+- [ ] 5 (a)
+- [ ] 5 (b)
+- [ ] 5 (c)
+- [ ] 6
+- [ ] 7
 
 ### Chapter 6: Graph Theory
 
