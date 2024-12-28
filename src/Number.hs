@@ -272,30 +272,47 @@ morpheusCipher = do
 
     where
         morpheusCipherInverse :: String -> Int -> Int -> String
-        morpheusCipherInverse cipherText a b = map (\c -> toEnum (c + fromEnum 'A')) plainCodes
-            where
-                cipherCodes = map (\c -> fromEnum c - fromEnum 'A') cipherText
-                cipherPairs = pairs cipherCodes
-                plainPairs = map (invertPair a b) cipherPairs
-                plainCodes = concatMap (\(p1, p2) -> [p1, p2]) plainPairs
+        morpheusCipherInverse cipherText a b =
+          map (\c -> toEnum (c + fromEnum 'A')) plainCodes
+          where
+            -- Convert ciphertext chars to [0..25]
+            cipherCodes = map (\c -> fromEnum c - fromEnum 'A') cipherText
 
-                pairs :: [a] -> [(a, a)]
-                pairs [] = []
-                pairs (x:y:xs) = (x, y) : pairs xs
+            -- Break the ciphertext vector into pairs
+            cipherPairs = pairs cipherCodes
 
-                invertPair :: Int -> Int -> (Int, Int) -> (Int, Int)
-                invertPair a b (c1, c2) = (p1', p2') -- Return the corrected p1' and p2'
-                    where
-                        det = (a * a - b * b) `mod` 26
-                        invDet = modInverse det 26
-                        p1 = (invDet * (a * c1 - b * c2)) `mod` 26
-                        p2 = (invDet * (a * c2 - b * c1)) `mod` 26
-                        -- Ensure positive results after modulo
-                        p1' = if p1 < 0 then p1 + 26 else p1
-                        p2' = if p2 < 0 then p2 + 26 else p2
+            -- Invert each pair, then flatten back
+            plainPairs  = map (invertPair a b) cipherPairs
+            plainCodes  = concatMap (\(p1, p2) -> [p1, p2]) plainPairs
 
-                modInverse :: Int -> Int -> Int
-                modInverse a m = head [x | x <- [1..m], (a * x) `mod` m == 1]
+            pairs :: [a] -> [(a, a)]
+            pairs []       = []
+            pairs (x:y:xs) = (x, y) : pairs xs
+
+            invertPair :: Int -> Int -> (Int, Int) -> (Int, Int)
+            invertPair a b (c1, c2) = (p1', p2')
+              where
+                -- 根據範例所用的加密矩陣 [a b; b -a]，
+                -- 其行列式為 -(a^2 + b^2) (mod 26)
+                det    = (-(a*a + b*b)) `mod` 26
+                invDet = modInverse det 26  -- 行列式的反元素(模 26)
+
+                -- 乘上 adj(E) = [ -a  -b ]
+                --              [ -b   a ]
+                -- 所以對 (c1, c2) 做乘法：
+                x1 = ((-a) * c1 + (-b) * c2) `mod` 26
+                x2 = ((-b) * c1 +    a  * c2) `mod` 26
+
+                -- 之後再乘上 invDet，取 mod 26
+                p1 = (invDet * x1) `mod` 26
+                p2 = (invDet * x2) `mod` 26
+
+                -- 確保結果在 [0..25] 範圍
+                p1' = if p1 < 0 then p1 + 26 else p1
+                p2' = if p2 < 0 then p2 + 26 else p2
+
+            modInverse :: Int -> Int -> Int
+            modInverse x m = head [ r | r <- [1..m], (x*r) `mod` m == 1 ]
 
 computeNumber :: IO ()
 computeNumber = do

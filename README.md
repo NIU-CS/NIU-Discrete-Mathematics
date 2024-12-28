@@ -145,7 +145,7 @@ This repository implements the exercises in the pdf files provided by the profes
 - [x] 1
 - [x] 2
 - [x] 3
-- [ ] 4
+- [x] 4
 
 ### Chapter 5: Relations and Functions
 
