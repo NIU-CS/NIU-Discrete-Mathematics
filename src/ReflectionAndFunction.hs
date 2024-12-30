@@ -22,7 +22,16 @@ prove1 = do
     putStrLn "<=> [(a ∈ A) ∧ (b ∈ C)] ∨ [(a ∈ B) ∧ (b ∈ C)]"
     putStrLn "<=> [(a, b) ∈ (A * C)] ∨ [(a, b) ∈ (B * C)]"
     putStrLn "<=> (a, b) ∈ (A * C) ∪ (B * C)"
-    endl
+
+-- 2. If A = {1, 2, 3, 4, 5}, and B = {w, x, y, z}, how many elements are there in P(A * B)?
+--
+-- |A * B| = |A| * |B| = 5 * 4 = 20
+-- |P(A * B)| = 2 ^ 20
+prove2 :: IO ()
+prove2 = do
+    putStrLn "2. If A = {1, 2, 3, 4, 5}, and B = {w, x, y, z}, how many elements are there in P(A * B)?"
+    putStrLn "|A * B| = |A| * |B| = 5 * 4 = 20"
+    putStrLn "|P(A * B)| = 2 ^ 20"
 
 computeReflectionAndFunction :: IO ()
 computeReflectionAndFunction = do
@@ -32,3 +41,6 @@ computeReflectionAndFunction = do
     endl
 
     prove1
+    endl
+    prove2
+    endl
