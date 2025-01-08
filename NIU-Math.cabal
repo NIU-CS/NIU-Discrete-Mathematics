@@ -30,6 +30,7 @@ library
       Graph
       Logic
       Number
+      NumberExample
       ReflectionAndFunction
       Set
   other-modules:

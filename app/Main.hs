@@ -3,20 +3,26 @@ module Main (main) where
 import Counting (computeCounting)
 import Logic (computeLogic)
 import Set (computeSet)
+import NumberExample (computeNumberExample)
 import Number (computeNumber)
 import ReflectionAndFunction (computeReflectionAndFunction)
 import Graph (computeGraph)
 
 main :: IO ()
 main = do
-    computeCounting
+    putStrLn "Hello Discrete Mathematics!"
+    putStrLn "=============================="
 
-    computeLogic
+    -- computeCounting
 
-    computeSet
+    -- computeLogic
 
-    computeNumber
+    -- computeSet
 
-    computeReflectionAndFunction
+    computeNumberExample
 
-    computeGraph
+    -- computeNumber
+
+    -- computeReflectionAndFunction
+
+    -- computeGraph
