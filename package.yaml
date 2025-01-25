@@ -1,14 +1,14 @@
-name:                NIU-Math
-version:             0.1.0.0
-github:              "githubuser/NIU-Math"
-license:             BSD-3-Clause
-author:              "Author name here"
-maintainer:          "example@example.com"
-copyright:           "2024 Author name here"
+name: NIU-Discrete-Mathematics
+version: 0.1.0.0
+github: "githubuser/NIU-Discrete-Mathematics"
+license: BSD-3-Clause
+author: "Author name here"
+maintainer: "example@example.com"
+copyright: "2024 Author name here"
 
 extra-source-files:
-- README.md
-- CHANGELOG.md
+  - README.md
+  - CHANGELOG.md
 
 # Metadata used when publishing your package
 # synopsis:            Short description of your package
@@ -17,43 +17,43 @@ extra-source-files:
 # To avoid duplicated efforts in documentation and dealing with the
 # complications of embedding Haddock markup inside cabal files, it is
 # common to point users to the README.md file.
-description:         Please see the README on GitHub at <https://github.com/githubuser/NIU-Math#readme>
+description: Please see the README on GitHub at <https://github.com/githubuser/NIU-Discrete-Mathematics#readme>
 
 dependencies:
-- base >= 4.7 && < 5
+  - base >= 4.7 && < 5
 
 ghc-options:
-- -Wall
-- -Wcompat
-- -Widentities
-- -Wincomplete-record-updates
-- -Wincomplete-uni-patterns
-- -Wmissing-export-lists
-- -Wmissing-home-modules
-- -Wpartial-fields
-- -Wredundant-constraints
+  - -Wall
+  - -Wcompat
+  - -Widentities
+  - -Wincomplete-record-updates
+  - -Wincomplete-uni-patterns
+  - -Wmissing-export-lists
+  - -Wmissing-home-modules
+  - -Wpartial-fields
+  - -Wredundant-constraints
 
 library:
   source-dirs: src
 
 executables:
-  NIU-Math-exe:
-    main:                Main.hs
-    source-dirs:         app
+  NIU-Discrete-Mathematics-exe:
+    main: Main.hs
+    source-dirs: app
     ghc-options:
-    - -threaded
-    - -rtsopts
-    - -with-rtsopts=-N
+      - -threaded
+      - -rtsopts
+      - -with-rtsopts=-N
     dependencies:
-    - NIU-Math
+      - NIU-Discrete-Mathematics
 
 tests:
-  NIU-Math-test:
-    main:                Spec.hs
-    source-dirs:         test
+  NIU-Discrete-Mathematics-test:
+    main: Spec.hs
+    source-dirs: test
     ghc-options:
-    - -threaded
-    - -rtsopts
-    - -with-rtsopts=-N
+      - -threaded
+      - -rtsopts
+      - -with-rtsopts=-N
     dependencies:
-    - NIU-Math
+      - NIU-Discrete-Mathematics

@@ -1,4 +1,4 @@
-# Changelog for `NIU-Math`
+# Changelog for `NIU-Discrete-Mathematics`
 
 All notable changes to this project will be documented in this file.
 

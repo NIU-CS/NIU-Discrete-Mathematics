@@ -1,4 +1,4 @@
-# NIU-Math
+# NIU-Discrete-Mathematics
 
 ## 課堂練習
 
